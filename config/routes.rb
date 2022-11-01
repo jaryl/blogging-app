@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   root to: "home_page#welcome"
 
-  resources :posts, only: [:index, :show]
+  resources :posts, only: [:index, :show, :new, :create, :edit, :update]
 end
