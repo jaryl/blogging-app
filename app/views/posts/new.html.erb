@@ -1,17 +1,19 @@
-<h1>New Post</h1>
+<%= turbo_frame_tag :new_post do %>
+  <h1>New Post</h1>
 
-<%= form_for @post do |form| %>
-  <%= form.object.errors.full_messages %>
+  <%= form_for @post, data: { turbo_frame: :posts } do |form| %>
+    <%= form.object.errors.full_messages %>
 
-  <%= form.label :title %>
-  <%= form.text_field :title %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
 
-  <br>
+    <br>
 
-  <%= form.label :content %>
-  <%= form.text_field :content %>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
 
-  <br>
+    <br>
 
-  <%= form.submit "Create Post" %>
+    <%= form.submit "Create Post" %>
+  <% end %>
 <% end %>
